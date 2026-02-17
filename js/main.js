@@ -8,6 +8,13 @@
 
     // ========== LOADING SCREEN ==========
     const loader = document.querySelector('.loader');
+
+    // Immediately hide loader on back/forward navigation
+    if (loader && (performance.navigation.type === 2 || performance.getEntriesByType('navigation')[0]?.type === 'back_forward')) {
+        loader.classList.add('hidden');
+        document.body.classList.remove('no-scroll');
+    }
+
     if (loader) {
         window.addEventListener('load', () => {
             setTimeout(() => {
