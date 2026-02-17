@@ -1485,9 +1485,14 @@ p {
   transition: opacity 0.6s var(--ease-out), visibility 0.6s;
 }
 
-.loader.hidden {
+.loader.hidden,
+html.loader-skip .loader {
   opacity: 0;
   visibility: hidden;
+}
+
+html.loader-skip body {
+  overflow: auto !important;
 }
 
 .loader__text {

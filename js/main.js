@@ -7,31 +7,30 @@
     'use strict';
 
     // ========== LOADING SCREEN ==========
+    // Check if loader should be skipped (back/forward navigation)
+    const skipLoader = document.documentElement.classList.contains('loader-skip');
+
     const loader = document.querySelector('.loader');
 
-    // Immediately hide loader on back/forward navigation
-    if (loader && (performance.navigation.type === 2 || performance.getEntriesByType('navigation')[0]?.type === 'back_forward')) {
-        loader.classList.add('hidden');
-        document.body.classList.remove('no-scroll');
-    }
-
-    if (loader) {
+    if (loader && !skipLoader) {
         window.addEventListener('load', () => {
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.body.classList.remove('no-scroll');
             }, 1200);
         });
-
-        // Handle browser back/forward navigation
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted) {
-                // Page loaded from cache (back/forward)
-                loader.classList.add('hidden');
-                document.body.classList.remove('no-scroll');
-            }
-        });
+    } else if (skipLoader) {
+        // Immediately remove no-scroll class for back/forward navigation
+        document.body.classList.remove('no-scroll');
     }
+
+    // Handle browser back/forward with page cache
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted && loader) {
+            loader.classList.add('hidden');
+            document.body.classList.remove('no-scroll');
+        }
+    });
 
     // ========== NAVIGATION ==========
     const nav = document.querySelector('.nav');
