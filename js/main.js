@@ -221,7 +221,122 @@
                 navMobile.classList.remove('open');
                 document.body.classList.remove('no-scroll');
             }
+            // Close image lightbox
+            const lightbox = document.querySelector('.image-lightbox');
+            if (lightbox && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
         }
+
+        // Lightbox navigation with arrow keys
+        const lightbox = document.querySelector('.image-lightbox');
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            }
+        }
+    });
+
+    // ========== IMAGE LIGHTBOX ==========
+    let currentImageIndex = 0;
+    let lightboxImages = [];
+
+    function createLightbox() {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'image-lightbox';
+        lightbox.innerHTML = `
+            <div class="image-lightbox__content">
+                <img class="image-lightbox__img" src="" alt="" />
+            </div>
+            <button class="image-lightbox__close" aria-label="Close"></button>
+            <button class="image-lightbox__nav image-lightbox__nav--prev" aria-label="Previous image"></button>
+            <button class="image-lightbox__nav image-lightbox__nav--next" aria-label="Next image"></button>
+            <div class="image-lightbox__counter"></div>
+        `;
+        document.body.appendChild(lightbox);
+        return lightbox;
+    }
+
+    function updateLightboxImage() {
+        const lightbox = document.querySelector('.image-lightbox');
+        if (!lightbox) return;
+
+        const lightboxImg = lightbox.querySelector('.image-lightbox__img');
+        const counter = lightbox.querySelector('.image-lightbox__counter');
+        const currentImg = lightboxImages[currentImageIndex];
+
+        lightboxImg.src = currentImg.src;
+        lightboxImg.alt = currentImg.alt || '';
+        counter.textContent = `${currentImageIndex + 1} / ${lightboxImages.length}`;
+    }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+        updateLightboxImage();
+    }
+
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+        updateLightboxImage();
+    }
+
+    function openLightbox(imgElement) {
+        let lightbox = document.querySelector('.image-lightbox');
+        if (!lightbox) {
+            lightbox = createLightbox();
+        }
+
+        // Find index of clicked image
+        currentImageIndex = lightboxImages.indexOf(imgElement);
+        updateLightboxImage();
+
+        setTimeout(() => {
+            lightbox.classList.add('active');
+            document.body.classList.add('no-scroll');
+        }, 10);
+
+        // Close on click outside or on close button
+        const closeBtn = lightbox.querySelector('.image-lightbox__close');
+        closeBtn.onclick = closeLightbox;
+
+        const prevBtn = lightbox.querySelector('.image-lightbox__nav--prev');
+        const nextBtn = lightbox.querySelector('.image-lightbox__nav--next');
+        prevBtn.onclick = (e) => {
+            e.stopPropagation();
+            showPrevImage();
+        };
+        nextBtn.onclick = (e) => {
+            e.stopPropagation();
+            showNextImage();
+        };
+
+        lightbox.onclick = (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        };
+    }
+
+    function closeLightbox() {
+        const lightbox = document.querySelector('.image-lightbox');
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    }
+
+    // Collect all case media images
+    const caseMediaImages = document.querySelectorAll('.case-media__hero-img img, .case-media__gallery-item img');
+    lightboxImages = Array.from(caseMediaImages);
+
+    caseMediaImages.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img);
+        });
     });
 
     // ========== PARALLAX SUBTLE EFFECT ==========
