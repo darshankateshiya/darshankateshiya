@@ -57,7 +57,9 @@
         </a>
 
         <div class="hero-anim hero-anim--1">
-          <span class="label label--accent">( System Architecture + IoT )</span>
+          <span class="label label--accent"
+            >( System Architecture + Hardware )</span
+          >
         </div>
 
         <h1 class="case-hero__title hero-anim hero-anim--2">
@@ -65,26 +67,26 @@
         </h1>
 
         <p class="case-hero__tagline hero-anim hero-anim--3">
-          A fully offline restaurant ecosystem — five interconnected apps
-          communicating without internet, powered by a local server running
-          inside Flutter and IoT hardware.
+          A production-ready restaurant management system with 10 interconnected
+          applications running entirely offline. Local backend server, real-time
+          communication over LAN, IoT hardware, and thermal printer integration.
         </p>
 
         <div class="case-hero__meta hero-anim hero-anim--4">
           <div class="case-hero__meta-item">
-            <span class="case-hero__meta-label">Platforms</span>
-            <span class="case-hero__meta-value"
-              >POS, KDS, Kiosk, Token Display, Captain App</span
-            >
+            <span class="case-hero__meta-label">Applications</span>
+            <span class="case-hero__meta-value">10 interconnected apps</span>
           </div>
           <div class="case-hero__meta-item">
             <span class="case-hero__meta-label">Architecture</span>
-            <span class="case-hero__meta-value">100% Offline</span>
+            <span class="case-hero__meta-value"
+              >Fully Offline + Local Backend</span
+            >
           </div>
           <div class="case-hero__meta-item">
             <span class="case-hero__meta-label">Role</span>
             <span class="case-hero__meta-value"
-              >System Architect & Product Manager</span
+              >Senior Flutter Developer & System Designer</span
             >
           </div>
         </div>
@@ -145,111 +147,152 @@
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">01 — The Problem</div>
+          <div class="case-section__number">01 — Project Overview</div>
           <h2 class="case-section__title">
-            Internet dependency kills restaurant operations
+            Complete restaurant management without internet dependency
           </h2>
         </div>
         <div class="reveal">
           <p class="case-section__text">
-            Most restaurant POS and management systems require a constant
-            internet connection. In many regions — and especially during peak
-            hours — network outages cause order chaos, payment failures, and
-            frustrated customers. A restaurant can't pause service because the
-            WiFi went down.
+            This system solves a critical problem in restaurant operations:
+            internet dependency. Most modern POS and restaurant management
+            solutions fail when the network goes down. This ecosystem runs
+            entirely offline with a local backend server, real-time
+            communication over LAN, and optional cloud sync when available.
           </p>
           <p class="case-section__text">
-            Existing "offline" solutions either lose data, fail to sync, or
-            degrade into limited modes that miss critical functionality. No
-            solution offered a complete, multi-device ecosystem that genuinely
-            works with zero internet.
+            Built as a complete multi-app system covering host management, POS
+            billing, kitchen operations, customer feedback, table devices, and
+            token displays. All 10 applications communicate in real-time without
+            external servers.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- The Solution -->
+    <!-- Applications -->
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">02 — The Solution</div>
-          <h2 class="case-section__title">
-            A local server inside Flutter itself
-          </h2>
-        </div>
-        <div class="reveal">
-          <p class="case-section__text">
-            The breakthrough was building a Dart-based local HTTP server that
-            runs inside the Flutter application itself. This server handles all
-            data, routing, and communication between the five ecosystem apps —
-            without any cloud dependency.
-          </p>
-          <p class="case-section__text">
-            All five apps (POS, Kitchen Display System, Self-Service Kiosk,
-            Token Display, and Captain App) discover the local server on the
-            network and communicate via REST APIs over LAN. IoT devices (ESP32
-            modules) handle physical triggers like buzzers and status lights.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Features -->
-    <section class="case-section">
-      <div class="container">
-        <div class="reveal">
-          <div class="case-section__number">03 — Key Features</div>
-          <h2 class="case-section__title">
-            Five apps, one ecosystem, zero internet
-          </h2>
+          <div class="case-section__number">
+            02 — Applications in the Eco-System
+          </div>
+          <h2 class="case-section__title">10 interconnected applications</h2>
         </div>
         <div class="feature-list stagger-children">
           <div class="feature-item">
-            <h4 class="feature-item__title">POS Terminal</h4>
+            <h4 class="feature-item__title">Host App</h4>
             <p class="feature-item__desc">
-              Full point-of-sale with menu management, billing, split payments,
-              discounts, and report generation — runs as the primary hub and
-              local server.
+              Runs the local backend server (Dart Shelf). Manages table
+              assignments, waiting lists, and acts as the central hub for all
+              other applications.
             </p>
           </div>
           <div class="feature-item">
-            <h4 class="feature-item__title">Kitchen Display System (KDS)</h4>
+            <h4 class="feature-item__title">POS (Point of Sale)</h4>
             <p class="feature-item__desc">
-              Real-time order display for kitchen staff. Orders appear instantly
-              when placed, with status updates flowing back to POS and Token
-              Display.
+              Complete billing system with multi-payment support, split bills,
+              discounts, tax calculation, and invoice generation. Supports USB,
+              Bluetooth, and LAN thermal printers.
             </p>
           </div>
           <div class="feature-item">
-            <h4 class="feature-item__title">Self-Service Kiosk</h4>
+            <h4 class="feature-item__title">KDS (Kitchen Display System)</h4>
             <p class="feature-item__desc">
-              Customer-facing ordering interface. Guests browse the menu,
-              customize their order, and place it directly — reducing wait time
-              and staff dependency.
-            </p>
-          </div>
-          <div class="feature-item">
-            <h4 class="feature-item__title">Token Display</h4>
-            <p class="feature-item__desc">
-              Large-screen display showing order token numbers and their status.
-              Customers know exactly when their order is ready without crowding
-              the counter.
+              Real-time order display for kitchen staff. Multi-kitchen support
+              with order routing, status updates, and prep time tracking.
             </p>
           </div>
           <div class="feature-item">
             <h4 class="feature-item__title">Captain App</h4>
             <p class="feature-item__desc">
-              Waiter/captain app for tableside ordering. Orders go directly to
-              KDS without passing through the POS — faster service for dine-in.
+              Waiter/server interface for tableside ordering. Orders sync
+              directly to KDS and POS without manual entry.
             </p>
           </div>
           <div class="feature-item">
-            <h4 class="feature-item__title">IoT Integration (ESP32)</h4>
+            <h4 class="feature-item__title">Token Display</h4>
             <p class="feature-item__desc">
-              Physical hardware integration — buzzers for order ready alerts,
-              LED indicators for kitchen status, all communicating over the
-              local network.
+              Large-screen display showing order tokens and statuses. Customers
+              see live updates when orders are ready for pickup.
             </p>
+          </div>
+          <div class="feature-item">
+            <h4 class="feature-item__title">Waiting App</h4>
+            <p class="feature-item__desc">
+              Queue management for walk-in customers. Displays estimated wait
+              times and notifies when tables are available.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h4 class="feature-item__title">Table Device Configuration</h4>
+            <p class="feature-item__desc">
+              Configuration tool for IoT table devices with three-button
+              interface: call waiter, request water, and request bill. Customers
+              use these devices for instant service requests without leaving
+              their table.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h4 class="feature-item__title">KOT Auto Print</h4>
+            <p class="feature-item__desc">
+              Kitchen Order Ticket (KOT) auto-printing service. Routes orders to
+              designated kitchen printers based on item category.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h4 class="feature-item__title">Feedback App</h4>
+            <p class="feature-item__desc">
+              Customer feedback collection interface. Captures ratings and
+              comments immediately after dining.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h4 class="feature-item__title">Customer Display</h4>
+            <p class="feature-item__desc">
+              Secondary display at POS counter showing order details to
+              customers during checkout.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="case-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="case-section__number">03 — Key Highlights</div>
+          <h2 class="case-section__title">Technical capabilities</h2>
+        </div>
+        <div class="role-list reveal">
+          <div class="role-item">
+            Fully offline operation — no internet required for core functions
+          </div>
+          <div class="role-item">
+            Local backend server built with Dart Shelf, running inside Flutter
+          </div>
+          <div class="role-item">
+            Real-time communication via WebSocket and REST APIs over LAN
+          </div>
+          <div class="role-item">
+            Thermal printer integration (USB, Bluetooth, LAN)
+          </div>
+          <div class="role-item">
+            IoT hardware support using ESP32 microcontrollers
+          </div>
+          <div class="role-item">
+            Responsive UI across mobile, tablet, POS terminals, and large
+            displays
+          </div>
+          <div class="role-item">
+            Multi-currency, multi-tax, and multi-kitchen configuration
+          </div>
+          <div class="role-item">
+            Optional Node.js cloud backend for data sync and backups
+          </div>
+          <div class="role-item">
+            Local database persistence with Isar and PostgreSQL
           </div>
         </div>
       </div>
@@ -259,30 +302,109 @@
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">04 — System & Architecture</div>
+          <div class="case-section__number">04 — System Architecture</div>
           <h2 class="case-section__title">
-            The most complex system I've built
+            How 10 applications communicate offline
           </h2>
         </div>
         <div class="reveal">
           <p class="case-section__text">
-            The POS app runs a Dart HTTP server that acts as the system's brain.
-            All other apps connect to this server over the local WiFi network.
-            Service discovery is automatic — when a KDS or Kiosk app launches,
-            it finds the POS server without manual configuration.
+            The Host App runs a Dart Shelf server that acts as the backend for
+            all other applications. When any app launches, it discovers the Host
+            App on the local network and establishes a WebSocket connection for
+            real-time updates.
           </p>
           <p class="case-section__text">
-            Data is persisted in PostgreSQL on the local machine for
-            production-grade reliability. The Node.js layer handles cloud sync
-            when internet is available — pushing daily reports, analytics, and
-            backups without interrupting live operations.
+            All business logic lives in the local server — order management,
+            billing, table assignments, kitchen routing. Applications
+            communicate via REST APIs for actions and WebSocket for live state
+            synchronization. This ensures instant updates across all devices
+            when an order is placed, modified, or completed.
           </p>
           <p class="case-section__text">
-            ESP32 microcontrollers (programmed in C) communicate with the Dart
-            server via HTTP, triggering physical outputs like order-ready
-            buzzers and kitchen status indicators. The entire system can run for
-            months without touching the internet.
+            Data persistence uses Isar database for lightweight local storage
+            and PostgreSQL for production deployments. An optional Node.js
+            backend handles cloud sync when internet is available — pushing
+            daily sales, analytics, and backups without interrupting live
+            service.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware Integration -->
+    <section class="case-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="case-section__number">
+            05 — Hardware & Device Integration
+          </div>
+          <h2 class="case-section__title">
+            Connecting physical devices to software
+          </h2>
+        </div>
+        <div class="reveal">
+          <p class="case-section__text">
+            Thermal printers are integrated via USB, Bluetooth, and LAN. The
+            system auto-detects connected printers and supports ESC/POS commands
+            for invoice and KOT printing. Multiple printers can be configured
+            per kitchen or billing counter.
+          </p>
+          <p class="case-section__text">
+            Each table is equipped with a small service device that lets
+            customers send service requests with a single button press. When a
+            button is pressed, the request is instantly shown to restaurant
+            staff on their screens, helping them respond faster and improve the
+            overall dining experience.
+          </p>
+          <p class="case-section__text">
+            The system is used across different screens inside the restaurant,
+            including billing counters, kitchen screens, service staff devices,
+            and customer-facing displays. Each screen runs a dedicated
+            application designed for its specific role, ensuring smooth
+            coordination between staff and a better experience for customers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scalability -->
+    <section class="case-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="case-section__number">
+            06 — Scalability & Business Logic
+          </div>
+          <h2 class="case-section__title">
+            Built for real-world restaurant complexity
+          </h2>
+        </div>
+        <div class="role-list reveal">
+          <div class="role-item">
+            Multi-kitchen support with order routing based on item categories
+          </div>
+          <div class="role-item">
+            Split billing, partial payments, and multiple payment methods
+          </div>
+          <div class="role-item">
+            Table merging, splitting, and transfer between waiters
+          </div>
+          <div class="role-item">
+            Dynamic pricing with happy hours, combo offers, and loyalty
+            discounts
+          </div>
+          <div class="role-item">
+            Inventory tracking with low-stock alerts and auto-reordering
+          </div>
+          <div class="role-item">
+            Multi-currency and multi-tax configuration for different regions
+          </div>
+          <div class="role-item">
+            Staff role management with permission-based access control
+          </div>
+          <div class="role-item">
+            Daily sales reports, shift reconciliation, and P&L analytics
+          </div>
         </div>
       </div>
     </section>
@@ -291,33 +413,41 @@
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">05 — Technology Stack</div>
-          <h2 class="case-section__title">The tools behind the product</h2>
+          <div class="case-section__number">07 — Technology Stack</div>
+          <h2 class="case-section__title">Tools and frameworks</h2>
         </div>
         <div class="tech-grid stagger-children">
           <div class="tech-item">
             <span class="tech-item__category">Frontend</span>
-            <span class="tech-item__value">Flutter (5 apps)</span>
+            <span class="tech-item__value">Flutter (10 apps)</span>
           </div>
           <div class="tech-item">
-            <span class="tech-item__category">Local Server</span>
-            <span class="tech-item__value">Dart HTTP Server</span>
+            <span class="tech-item__category">Local Backend</span>
+            <span class="tech-item__value">Dart Shelf Server</span>
           </div>
           <div class="tech-item">
-            <span class="tech-item__category">Cloud Sync</span>
-            <span class="tech-item__value">Node.js</span>
+            <span class="tech-item__category">Cloud Backend</span>
+            <span class="tech-item__value">Node.js + Express</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-item__category">Real-Time</span>
+            <span class="tech-item__value">WebSocket + REST APIs</span>
           </div>
           <div class="tech-item">
             <span class="tech-item__category">Database</span>
-            <span class="tech-item__value">PostgreSQL</span>
+            <span class="tech-item__value">PostgreSQL + Isar DB</span>
           </div>
           <div class="tech-item">
-            <span class="tech-item__category">IoT</span>
-            <span class="tech-item__value">ESP32 (C)</span>
+            <span class="tech-item__category">IoT Hardware</span>
+            <span class="tech-item__value">ESP32 (C Programming)</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-item__category">Printers</span>
+            <span class="tech-item__value">ESC/POS Thermal Printers</span>
           </div>
           <div class="tech-item">
             <span class="tech-item__category">Network</span>
-            <span class="tech-item__value">LAN, mDNS discovery</span>
+            <span class="tech-item__value">mDNS Discovery, LAN</span>
           </div>
         </div>
       </div>
@@ -327,64 +457,73 @@
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">06 — My Role</div>
+          <div class="case-section__number">08 — Role & Responsibilities</div>
           <h2 class="case-section__title">
-            Architect, builder, and product owner
+            End-to-end system design and implementation
           </h2>
         </div>
         <div class="role-list reveal">
           <div class="role-item">
-            System architecture design — offline-first, multi-app, local server
+            System architecture design for offline-first multi-app ecosystem
           </div>
           <div class="role-item">
-            Product management and restaurant workflow research
+            Flutter development for all 10 applications
           </div>
           <div class="role-item">
-            Flutter development for all five ecosystem apps
+            Dart Shelf server implementation for local backend
           </div>
           <div class="role-item">
-            Dart-based local HTTP server implementation
+            WebSocket and REST API design for real-time communication
           </div>
           <div class="role-item">
-            ESP32 IoT firmware development (C programming)
+            ESP32 firmware development (C) for IoT integration
           </div>
           <div class="role-item">
-            PostgreSQL database schema and data integrity design
+            Thermal printer integration (USB, Bluetooth, LAN)
           </div>
           <div class="role-item">
-            Node.js cloud sync service for backups and reporting
+            Database schema design for PostgreSQL and Isar
           </div>
           <div class="role-item">
-            End-to-end testing across the multi-device ecosystem
+            Node.js cloud sync service for backups and analytics
+          </div>
+          <div class="role-item">
+            UI/UX design for responsive interfaces across device types
+          </div>
+          <div class="role-item">
+            Testing and deployment across production restaurant environments
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Impact -->
+    <!-- Why This Matters -->
     <section class="case-section">
       <div class="container">
         <div class="reveal">
-          <div class="case-section__number">07 — Impact</div>
-          <h2 class="case-section__title">Real-world results</h2>
+          <div class="case-section__number">09 — Why This Project Matters</div>
+          <h2 class="case-section__title">Real-world impact and learnings</h2>
         </div>
-        <div class="impact-grid stagger-children">
-          <div class="impact-item">
-            <div class="impact-item__value">100%</div>
-            <div class="impact-item__label">Offline operation</div>
-          </div>
-          <div class="impact-item">
-            <div class="impact-item__value">5</div>
-            <div class="impact-item__label">Interconnected apps</div>
-          </div>
-          <div class="impact-item">
-            <div class="impact-item__value">0</div>
-            <div class="impact-item__label">Internet dependency</div>
-          </div>
-          <div class="impact-item">
-            <div class="impact-item__value">IoT</div>
-            <div class="impact-item__label">Hardware integration</div>
-          </div>
+        <div class="reveal">
+          <p class="case-section__text">
+            This project demonstrates the ability to design and build complex,
+            production-grade systems that solve real business problems. It
+            required deep understanding of system architecture, network
+            communication, hardware integration, and offline-first data
+            management.
+          </p>
+          <p class="case-section__text">
+            The system is deployed in live restaurant environments, handling
+            hundreds of daily orders without internet dependency. It proves that
+            Flutter can be used beyond mobile apps — for backend servers, IoT
+            communication, and multi-platform desktop applications.
+          </p>
+          <p class="case-section__text">
+            Key takeaway: offline-first architecture isn't just a feature, it's
+            a reliability guarantee. When designed correctly, local systems
+            perform better, faster, and more reliably than cloud-dependent
+            alternatives.
+          </p>
         </div>
       </div>
     </section>
@@ -397,7 +536,7 @@
       </a>
       <a href="../optical-erp/" class="case-nav__link case-nav__link--next">
         <span class="case-nav__label">Next Project →</span>
-        <span class="case-nav__name">Opt ERP System</span>
+        <span class="case-nav__name">Optical ERP System</span>
       </a>
     </div>
 
