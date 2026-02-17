@@ -4,19 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <style id="back-nav-fix"></style>
-    <script>
-      (function () {
-        // Mark page as visited
-        var visited = sessionStorage.getItem("visited");
-        if (visited) {
-          // Skip loader on subsequent navigation
-          document.getElementById("back-nav-fix").textContent =
-            ".loader{display:none!important}body{overflow:auto!important}";
-        }
-        sessionStorage.setItem("visited", "1");
-      })();
-    </script>
     <meta
       name="description"
       content="Darshan Kateshiya — Senior Flutter Developer & Full Stack Engineer. 5+ years building production apps across Android, iOS, Windows, macOS. Open to full-time engineering roles."
@@ -51,16 +38,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="no-scroll">
-    <!-- Loading Screen -->
-    <div class="loader">
-      <div class="loader__text">
-        <span>D</span><span>A</span><span>R</span><span>S</span><span>H</span
-        ><span>A</span><span>N</span><span>&nbsp;</span><span>K</span
-        ><span>.</span>
-      </div>
-    </div>
-
+  <body>
     <!-- Page Transition -->
     <div class="page-transition"></div>
 

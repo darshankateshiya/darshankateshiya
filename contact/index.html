@@ -4,22 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <style id="back-nav-fix">
-      /* Auto-hide loader on back navigation */
-    </style>
-    <script>
-      (function () {
-        if (
-          window.performance &&
-          (performance.navigation.type === 2 ||
-            performance.getEntriesByType("navigation")[0]?.type ===
-              "back_forward")
-        ) {
-          document.getElementById("back-nav-fix").textContent =
-            ".loader{display:none!important}body{overflow:auto!important}";
-        }
-      })();
-    </script>
     <meta
       name="description"
       content="Contact Darshan Kateshiya — Senior Flutter Developer open to full-time engineering roles and team opportunities."
@@ -33,13 +17,7 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="no-scroll">
-    <div class="loader">
-      <div class="loader__text">
-        <span>C</span><span>O</span><span>N</span><span>T</span><span>A</span
-        ><span>C</span><span>T</span>
-      </div>
-    </div>
+  <body>
     <div class="page-transition"></div>
 
     <!-- Navigation -->

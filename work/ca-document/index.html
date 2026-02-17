@@ -4,17 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-    <style id="back-nav-fix"></style>
-    <script>
-      (function () {
-        var visited = sessionStorage.getItem("visited");
-        if (visited) {
-          document.getElementById("back-nav-fix").textContent =
-            ".loader{display:none!important}body{overflow:auto!important}";
-        }
-        sessionStorage.setItem("visited", "1");
-      })();
-    </script>
     <meta
       name="description"
       content="CA Document & Staff Management System — Real-time workflow system with Socket.IO by Darshan Kateshiya."
@@ -28,13 +17,7 @@
     />
     <link rel="stylesheet" href="../../css/style.css" />
   </head>
-  <body class="no-scroll">
-    <div class="loader">
-      <div class="loader__text">
-        <span>C</span><span>A</span><span>&nbsp;</span><span>D</span
-        ><span>O</span><span>C</span><span>S</span>
-      </div>
-    </div>
+  <body>
     <div class="page-transition"></div>
 
     <!-- Navigation -->

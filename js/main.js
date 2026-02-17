@@ -6,32 +6,6 @@
 (function () {
     'use strict';
 
-    // ========== LOADING SCREEN ==========
-    // Check if loader should be skipped (back/forward navigation)
-    const skipLoader = document.documentElement.classList.contains('loader-skip');
-
-    const loader = document.querySelector('.loader');
-
-    if (loader && !skipLoader) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loader.classList.add('hidden');
-                document.body.classList.remove('no-scroll');
-            }, 1200);
-        });
-    } else if (skipLoader) {
-        // Immediately remove no-scroll class for back/forward navigation
-        document.body.classList.remove('no-scroll');
-    }
-
-    // Handle browser back/forward with page cache
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted && loader) {
-            loader.classList.add('hidden');
-            document.body.classList.remove('no-scroll');
-        }
-    });
-
     // ========== NAVIGATION ==========
     const nav = document.querySelector('.nav');
     const navToggle = document.querySelector('.nav__toggle');

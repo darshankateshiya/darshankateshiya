@@ -4,17 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-    <style id="back-nav-fix"></style>
-    <script>
-      (function () {
-        var visited = sessionStorage.getItem("visited");
-        if (visited) {
-          document.getElementById("back-nav-fix").textContent =
-            ".loader{display:none!important}body{overflow:auto!important}";
-        }
-        sessionStorage.setItem("visited", "1");
-      })();
-    </script>
     <meta
       name="description"
       content="Satvara Sagpan — Largest community matrimony app built with Flutter, Node.js & AWS by Darshan Kateshiya."
@@ -28,13 +17,7 @@
     />
     <link rel="stylesheet" href="../../css/style.css" />
   </head>
-  <body class="no-scroll">
-    <div class="loader">
-      <div class="loader__text">
-        <span>S</span><span>A</span><span>T</span><span>V</span><span>A</span
-        ><span>R</span><span>A</span>
-      </div>
-    </div>
+  <body>
     <div class="page-transition"></div>
 
     <!-- Navigation -->

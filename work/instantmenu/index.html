@@ -4,17 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-    <style id="back-nav-fix"></style>
-    <script>
-      (function () {
-        var visited = sessionStorage.getItem("visited");
-        if (visited) {
-          document.getElementById("back-nav-fix").textContent =
-            ".loader{display:none!important}body{overflow:auto!important}";
-        }
-        sessionStorage.setItem("visited", "1");
-      })();
-    </script>
     <meta
       name="description"
       content="InstantMenu — Digital QR menu & online ordering platform with 10,000+ downloads, built by Darshan Kateshiya."
@@ -28,14 +17,7 @@
     />
     <link rel="stylesheet" href="../../css/style.css" />
   </head>
-  <body class="no-scroll">
-    <div class="loader">
-      <div class="loader__text">
-        <span>I</span><span>N</span><span>S</span><span>T</span><span>A</span
-        ><span>N</span><span>T</span><span>M</span><span>E</span><span>N</span
-        ><span>U</span>
-      </div>
-    </div>
+  <body>
     <div class="page-transition"></div>
 
     <!-- Navigation -->
