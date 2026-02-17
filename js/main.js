@@ -15,6 +15,15 @@
                 document.body.classList.remove('no-scroll');
             }, 1200);
         });
+
+        // Handle browser back/forward navigation
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                // Page loaded from cache (back/forward)
+                loader.classList.add('hidden');
+                document.body.classList.remove('no-scroll');
+            }
+        });
     }
 
     // ========== NAVIGATION ==========
