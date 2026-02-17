@@ -13,6 +13,9 @@
             "back_forward")
       ) {
         document.documentElement.classList.add("loader-skip");
+        document.write(
+          "<style>body.no-scroll{overflow:auto!important}.loader{display:none!important}</style>",
+        );
       }
     </script>
     <meta

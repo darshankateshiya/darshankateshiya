@@ -6,7 +6,17 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <script>
       // Immediately hide loader on browser back/forward
-      if(window.performance&&(performance.navigation.type===2||performance.getEntriesByType('navigation')[0]?.type==='back_forward')){document.documentElement.classList.add('loader-skip');}
+      if (
+        window.performance &&
+        (performance.navigation.type === 2 ||
+          performance.getEntriesByType("navigation")[0]?.type ===
+            "back_forward")
+      ) {
+        document.documentElement.classList.add("loader-skip");
+        document.write(
+          "<style>body.no-scroll{overflow:auto!important}.loader{display:none!important}</style>",
+        );
+      }
     </script>
     <meta
       name="description"
